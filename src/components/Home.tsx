@@ -10,10 +10,9 @@ import {
   SimpleGrid,
   Image,
   Flex,
-  Icon,
-  Link
+  Icon
 } from '@chakra-ui/react'
-import { FaCode, FaDatabase, FaReact, FaNodeJs, FaGithub, FaExternalLinkAlt, FaPython, FaGit } from 'react-icons/fa'
+import { FaCode, FaDatabase, FaReact, FaNodeJs, FaGithub, FaPython, FaGit } from 'react-icons/fa'
 import { SiMongodb, SiExpress, SiCplusplus, SiJavascript, SiMysql } from 'react-icons/si'
 import { VscCode } from 'react-icons/vsc'
 import { GiCubes } from 'react-icons/gi'

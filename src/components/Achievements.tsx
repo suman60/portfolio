@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import { Box, Container, Heading, Text, VStack, HStack, Icon as ChakraIcon, SimpleGrid, List, ListItem, ListIcon, Link } from '@chakra-ui/react'
+import { Box, Container, Heading, Text, VStack, Icon as ChakraIcon, SimpleGrid, List, ListItem, ListIcon, Link } from '@chakra-ui/react'
 import { FaTrophy, FaMedal, FaCode, FaCheckCircle } from 'react-icons/fa'
 import { IconType } from 'react-icons'
 
