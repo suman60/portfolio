@@ -38,25 +38,18 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: (id) => {
-          // Split React and related packages
           if (id.includes('node_modules/react') || 
               id.includes('node_modules/react-dom') || 
               id.includes('node_modules/react-router')) {
             return 'react-vendor';
           }
-          
-          // Split Chakra UI and Emotion
           if (id.includes('node_modules/@chakra-ui') || 
               id.includes('node_modules/@emotion')) {
             return 'ui-vendor';
           }
-          
-          // Split icons
           if (id.includes('node_modules/react-icons')) {
             return 'icons-vendor';
           }
-          
-          // Split other dependencies
           if (id.includes('node_modules')) {
             return 'vendor';
           }
@@ -79,5 +72,13 @@ export default defineConfig({
       }
     },
     sourcemap: false
-  }
+  },
+  resolve: {
+    alias: {
+      '@': '/src',
+      '@assets': '/src/assets'
+    }
+  },
+  publicDir: 'public',
+  base: './'
 }) 

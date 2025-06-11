@@ -20,7 +20,14 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "allowJs": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+
+    /* Path Aliases */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@assets/*": ["src/assets/*"]
+    }
   },
   "include": ["src", "backend"],
   "references": [{ "path": "./tsconfig.node.json" }]
