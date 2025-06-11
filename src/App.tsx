@@ -1,5 +1,6 @@
+import React, { useEffect } from 'react'
 import { ChakraProvider, Box } from '@chakra-ui/react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Projects from './components/Projects'
@@ -7,9 +8,8 @@ import Achievements from './components/Achievements'
 import Footer from './components/Footer'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import { useEffect } from 'react'
 
-function App() {
+const App: React.FC = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000,

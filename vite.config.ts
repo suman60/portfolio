@@ -33,6 +33,8 @@ export default defineConfig({
     host: true,
   },
   build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
     chunkSizeWarningLimit: 3000,
     cssCodeSplit: true,
     rollupOptions: {
@@ -80,5 +82,5 @@ export default defineConfig({
     }
   },
   publicDir: 'public',
-  base: './'
+  base: '/portfolio/'
 }) 
