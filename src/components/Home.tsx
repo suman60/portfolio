@@ -17,6 +17,7 @@ import { SiMongodb, SiExpress, SiCplusplus, SiJavascript, SiMysql } from 'react-
 import { VscCode } from 'react-icons/vsc'
 import { GiCubes } from 'react-icons/gi'
 import type { IconType } from 'react-icons'
+// @ts-ignore
 import profilePic from '../assets/suman.JPG'
 
 interface Skill {

@@ -13,7 +13,7 @@ export default defineConfig({
       threshold: 10240 // Only compress files > 10KB
     })
   ],
-  assetsInclude: ['**/*.svg'],
+  assetsInclude: ['**/*.JPG', '**/*.jpg', '**/*.png', '**/*.gif', '**/*.svg'],
   server: {
     port: 5173,
     strictPort: true, // Force port 8080 only
@@ -48,7 +48,7 @@ export default defineConfig({
         },
         assetFileNames: (assetInfo: { name?: string }) => {
           const name = assetInfo.name || '';
-          if (name.endsWith('.jpg') || name.endsWith('.png')) {
+          if (name.endsWith('.jpg') || name.endsWith('.JPG') || name.endsWith('.png')) {
             return 'assets/images/[name]-[hash][extname]';
           }
           return 'assets/[name]-[hash][extname]';
