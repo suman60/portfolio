@@ -5,6 +5,7 @@ import viteCompression from 'vite-plugin-compression'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/portfolio/',
   plugins: [
     react(),
     imagetools(),
@@ -72,6 +73,5 @@ export default defineConfig({
       '@assets': '/src/assets'
     }
   },
-  publicDir: 'public',
-  base: '/portfolio/'
+  publicDir: 'public'
 }) 
