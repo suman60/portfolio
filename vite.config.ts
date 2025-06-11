@@ -16,20 +16,11 @@ export default defineConfig({
   assetsInclude: ['**/*.JPG', '**/*.jpg', '**/*.png', '**/*.gif', '**/*.svg'],
   server: {
     port: 5173,
-    strictPort: true, // Force port 8080 only
     host: true,
-    open: true,
-    proxy: {
-      '/api': {
-        target: 'http://localhost:8080',
-        changeOrigin: true,
-        secure: false,
-      }
-    }
+    open: true
   },
   preview: {
     port: 8080,
-    strictPort: true, // Force port 8080 for preview too
     host: true,
   },
   build: {
