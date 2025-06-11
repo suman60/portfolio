@@ -37,14 +37,29 @@ export default defineConfig({
     cssCodeSplit: true,
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom'],
-          'router-vendor': ['react-router-dom'],
-          'chakra-ui': ['@chakra-ui/react'],
-          'emotion': ['@emotion/react', '@emotion/styled'],
-          'icons-vendor': ['react-icons'],
-          'animation-vendor': ['framer-motion'],
-          'utils-vendor': ['axios']
+        manualChunks: (id) => {
+          // Split React and related packages
+          if (id.includes('node_modules/react') || 
+              id.includes('node_modules/react-dom') || 
+              id.includes('node_modules/react-router')) {
+            return 'react-vendor';
+          }
+          
+          // Split Chakra UI and Emotion
+          if (id.includes('node_modules/@chakra-ui') || 
+              id.includes('node_modules/@emotion')) {
+            return 'ui-vendor';
+          }
+          
+          // Split icons
+          if (id.includes('node_modules/react-icons')) {
+            return 'icons-vendor';
+          }
+          
+          // Split other dependencies
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
         },
         assetFileNames: (assetInfo: { name?: string }) => {
           const name = assetInfo.name || '';
@@ -54,6 +69,15 @@ export default defineConfig({
           return 'assets/[name]-[hash][extname]';
         }
       }
-    }
+    },
+    // Optimize build settings
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
+      }
+    },
+    sourcemap: false
   }
 }) 

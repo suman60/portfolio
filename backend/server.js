@@ -17,7 +17,12 @@ const PORT = process.env.PORT || 10000;
 app.use(cors());
 app.use(express.json());
 
-// Serve static files from the React app in production
+// Log environment details
+console.log('Environment:', process.env.NODE_ENV);
+console.log('Port:', PORT);
+console.log('Current directory:', __dirname);
+
+// Serve static files from the React app
 app.use(express.static(path.join(__dirname, '../dist')));
 
 // Test route
@@ -25,14 +30,17 @@ app.get('/api/test', (req, res) => {
   res.json({ message: 'Backend server is running!' });
 });
 
-// Handle React routing in production
+// Handle React routing
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
-// Start server
-app.listen(PORT, '0.0.0.0', () => {
+// Start server with explicit host binding
+const server = app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server is running on port ${PORT}`);
-  console.log('Current directory:', __dirname);
-  console.log('Static files path:', path.join(__dirname, '../dist'));
+  console.log('Server is listening on all available network interfaces (0.0.0.0)');
+  
+  // Log all listening addresses
+  const addresses = server.address();
+  console.log('Server address details:', addresses);
 }); 
