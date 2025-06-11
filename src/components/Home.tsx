@@ -18,7 +18,7 @@ import { VscCode } from 'react-icons/vsc'
 import { GiCubes } from 'react-icons/gi'
 import type { IconType } from 'react-icons'
 
-const profilePic = '/suman.JPG'
+const profilePic = './suman.JPG'
 
 interface Skill {
   name: string;

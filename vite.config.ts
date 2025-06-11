@@ -5,7 +5,7 @@ import viteCompression from 'vite-plugin-compression'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: './',
+  base: '/portfolio/',  // GitHub Pages repository name
   plugins: [
     react(),
     imagetools(),
